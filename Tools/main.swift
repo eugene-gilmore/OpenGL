@@ -370,11 +370,11 @@ func paramType(x:KhronosXmlDelegate.paramTuple) -> String
     } else if x.ptr == "const!*?" {
         type = "UnsafePointer<\(type)>"
     } else if x.ptr == "!*?" {
-        type = type == "Void" ? "UnsafeMutableRawPointer" : "UnsafeMutablePointer<\(type)>"
+        type = type == "Void" ? "UnsafeMutableRawPointer?" : "UnsafeMutablePointer<\(type)>"
     } else if x.ptr == "void*?" {
-        type = "UnsafeMutableRawPointer"
+        type = "UnsafeMutableRawPointer?"
     } else if x.ptr == "constvoid*?" {
-        type = "UnsafeRawPointer"
+        type = "UnsafeRawPointer?"
     } else if x.ptr == "constvoid**?" {
         type = "UnsafeMutablePointer<UnsafeRawPointer>"
     } else if x.ptr == "const!*const*?" {
